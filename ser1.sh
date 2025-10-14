@@ -13,7 +13,7 @@ METHOD="${METHOD:-AEAD_AES_256_GCM}"
 LISTEN_PORT="${LISTEN_PORT:-8388}"
 LISTEN_PASS="${LISTEN_PASS:-867647}"
 # REMOTE: куда форвардить
-REMOTE_IP="${REMOTE_IP:-207.148.99.218}"
+REMOTE_IP="${REMOTE_IP:-5.188.38.177}"
 REMOTE_PORT="${REMOTE_PORT:-8388}"
 REMOTE_PASS="${REMOTE_PASS:-$LISTEN_PASS}"   # по умолчанию такой же, как LISTEN_PASS
 
@@ -94,5 +94,6 @@ ss -lunup 2>/dev/null | grep -E ":${LISTEN_PORT}\s" || true
 
 ok "Готово. glider слушает SS на :${LISTEN_PORT} и форвардит на ${REMOTE_IP}:${REMOTE_PORT}"
 echo "Напоминание: открой порт ${LISTEN_PORT} в фаерволе провайдера (например, Lightsail → Networking)."
+
 
 
